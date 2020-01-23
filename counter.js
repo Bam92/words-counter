@@ -1,13 +1,20 @@
-const t = document.querySelector('textarea');
-const charDOM = document.querySelector('#charNum')
-const wordDOM = document.querySelector('#wordNum')
-let chars, words = 0
+const charDOM = document.querySelector('#charNum');
+const wordDOM = document.querySelector('#wordNum');
 
-t.addEventListener('input', event => {
-const text = t.value.trim()
-    
-    charDOM.innerText = text.length
-    wordDOM.innerText = text.split(" ").length
+function renderText(domElt, text) {
+    domElt.innerText = text;
+}
 
-    
-})
+
+function init() {
+    document
+      .querySelector('textarea')
+      .addEventListener("input", event => {
+        const text = event.target.value.trim();
+
+        renderText(charDOM, text.length);
+        renderText(wordDOM, text.split(" ").length);      
+    });
+}
+
+init();
