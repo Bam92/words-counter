@@ -5,6 +5,24 @@ function renderText(domElt, text) {
     domElt.innerText = text;
 }
 
+function handleWord(text) {
+    const textArr = text.split(" ");
+    let wordCount = 0;
+
+    for(word of textArr) {
+        if(/[a-zA-Z0-9]/.test(word)) {
+            wordCount += 1;
+        }
+    }
+
+    renderText(wordDOM, wordCount);      
+
+}
+
+function handleChar(text) {
+    renderText(charDOM, text.length);
+    
+}
 
 function init() {
     document
@@ -12,8 +30,9 @@ function init() {
       .addEventListener("input", event => {
         const text = event.target.value.trim();
 
-        renderText(charDOM, text.length);
-        renderText(wordDOM, text.split(" ").length);      
+        handleChar(text);
+        handleWord(text);
+
     });
 }
 
