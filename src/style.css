@@ -3,6 +3,12 @@ body {
     background: darkgray;
 }
 
+h1,
+footer {
+    text-align: center;
+    color: #fff;
+}
+
 #container {
     display: flex;
     justify-content: center;
@@ -14,8 +20,6 @@ body {
     border-right: 2px solid;
     width: 48%; 
 }
-
-
 
 #container div:last-child {
     margin-left: 3.5em;
