@@ -11,34 +11,38 @@ footer {
 
 #container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 40em;
 }  
 
-#container div:first-child {
-    border-right: 2px solid;
-    width: 48%; 
-}
-
-#container div:last-child {
-    margin-left: 3.5em;
-    width: 30%; 
-}
-
 textarea {
     min-height: 25em;
     min-width: 50em;
     padding: 1em;
-    border-radius: .7em;
+    border-radius: .7em .7em 0 0;
+}
+
+#container p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    background: rgb(67, 160, 71);
+    border-radius: 0 0 .7em .7em ;
+    margin-top: -1px;
+    width: 43.4em;
 }
 
 textarea:focus {
-    border: 2px solid;
+    border-left: 2px solid rgb(67, 160, 71);
+    border-top: 2px solid rgb(67, 160, 71);
+    border-right: 2px solid rgb(67, 160, 71);
 }
 
 #container span {
-    background: coral;
     color: white;
     font-weight: bold;
+    margin: 5px;
 }
