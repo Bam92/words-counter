@@ -15,13 +15,12 @@ function handleWord(text) {
         }
     }
 
-    renderText(wordDOM, wordCount);      
+    return wordCount;      
 
 }
 
 function handleChar(text) {
-    renderText(charDOM, text.length);
-    
+   return text.length;     
 }
 
 function init() {
@@ -29,9 +28,10 @@ function init() {
       .querySelector('textarea')
       .addEventListener("input", event => {
         const text = event.target.value.trim();
-
-        handleChar(text);
-        handleWord(text);
+        
+        // get word count and char count and render them
+        renderText(wordDOM, handleWord(text));
+        renderText(charDOM, handleChar(text));       
 
     });
 }
